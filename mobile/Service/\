@@ -50,11 +50,12 @@ const Tabs = () => {
         name={'DispatchScreen'}
         options={{
           tabBarIcon: ({focused}) => (
-            <Animated.View
+            <View
               style={[
                 styles.constrainer,
                 {
-                  width: focused ? '100%' : null,
+                  backgroundColor: focused ? 'silver' : 'white',
+                  opacity: fadeAnim,
                 },
               ]}>
               <Image
@@ -65,7 +66,7 @@ const Tabs = () => {
                 }}
               />
               {focused ? <Text>Dispatch</Text> : null}
-            </Animated.View>
+            </View>
           ),
         }}
       />
@@ -78,14 +79,10 @@ const Tabs = () => {
               style={[
                 styles.constrainer,
                 {
-                  width: focused ? '150%' : '10%',
+                  backgroundColor: focused ? 'silver' : 'white',
                 },
               ]}>
-              <Image
-                source={require('../images/icons8-error-50.png')}
-                style={{width: 20, height: 20}}
-              />
-              {focused ? <Text>Issues</Text> : null}
+              <Text>Current Issues</Text>
             </View>
           ),
         }}
@@ -98,15 +95,11 @@ const Tabs = () => {
             <View
               style={[
                 styles.constrainer,
-                {
-                  width: focused ? '100%' : '10%',
-                },
+                {backgroundColor: focused ? 'silver' : 'white'},
               ]}>
-              <Image
-                source={require('../images/icons8-speech-60.png')}
-                style={{width: 20, height: 20}}
-              />
-              {focused ? <Text>Bulletin</Text> : null}
+              <Text style={focused ? styles.focusedWite : styles.focusedGrey}>
+                Announcements
+              </Text>
             </View>
           ),
         }}
@@ -123,9 +116,10 @@ const styles = StyleSheet.create({
         height: '70%',
       },
     }),
-    //flexDirection: 'row',
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+    //width: '150%',
     borderRadius: 10,
   },
   focusedWite: {

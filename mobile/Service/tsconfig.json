@@ -6,6 +6,8 @@
     "lib": ["es6"],                           /* Specify library files to be included in the compilation. */
     "allowJs": true,                          /* Allow javascript files to be compiled. */
     // "checkJs": true,                       /* Report errors in .js files. */
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
     "jsx": "react-native",                    /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
     // "declaration": true,                   /* Generates corresponding '.d.ts' file. */
     // "sourceMap": true,                     /* Generates corresponding '.map' file. */
@@ -14,6 +16,7 @@
     // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "removeComments": true,                /* Do not emit comments to output. */
     "noEmit": true,                           /* Do not emit outputs. */
+    "skipLibCheck": true,
     // "incremental": true,                   /* Enable incremental compilation */
     // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
     // "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. */

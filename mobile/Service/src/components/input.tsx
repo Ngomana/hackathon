@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
-import {TextInput as TextBox, StyleSheet} from 'react-native';
+import {TextInput as TextBox, StyleSheet, Platform} from 'react-native';
 
 interface IProps {
   placeholder: string;
-  onChange: () => void;
+  onChange: any;
   value: string;
 }
 
@@ -23,6 +23,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     shadowColor: 'white',
     textAlign: 'center',
+    ...Platform.select({
+      ios: {margin: 15},
+      android: {
+        marginLeft: 15,
+        marginRight: 15,
+      },
+    }),
   },
 });
 
